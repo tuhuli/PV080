@@ -32,7 +32,9 @@ def fetch_website(urllib_version, url):
  
     try:
         http = urllib.PoolManager()
-        http.request('GET', url)
+        authorized_url = {"https://www.google.com"}
+        if url in authorized_url:
+            http.request('GET', url)
     except:
         print('Exception')
 
